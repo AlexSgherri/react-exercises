@@ -6,18 +6,17 @@ export class Counter extends React.Component {
     count: this.props.initialValue,
   }
 
-  constructor(props) {
-    super(props)
+  componentDidMount(){
 
-    setInterval(() => {
-      this.setState((state) => {
-       return {
-           count: state.count + this.props.incrementAmount
-       }
-      });
-    }, this.props.incrementInterval);
-  }
-
+      setInterval(() => {
+          this.setState((state) => {
+              return {
+                  count: state.count + this.props.incrementAmount
+                }
+            });
+        }, this.props.incrementInterval);
+    }
+        
   render() {
     return <CounterDisplay stateAsAProp={this.state.count}/>
   }
