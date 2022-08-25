@@ -9,7 +9,7 @@ export class Welcome extends React.Component{
         return (
             <div>
                 <p>Welcome, {this.props.name}</p>
-                { this.props.name === "John" && <Age age={24} /> }
+                { this.props.name === "John" && <Age age={17} /> }
             </div>
         )
     }
