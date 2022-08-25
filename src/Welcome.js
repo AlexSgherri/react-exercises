@@ -10,7 +10,7 @@ export class Welcome extends React.Component{
         return (
             <div>
                 <p>Welcome, {this.props.name}</p>
-                <Age age={24} />
+                <Age age={18} />
             </div>
         )
     }
