@@ -4,13 +4,12 @@ import { Age } from "./Age";
 export class Welcome extends React.Component{
     static defaultProps = {
         name : "Alessandro",
-        age: "not specified"
     }
     render(){
         return (
             <div>
                 <p>Welcome, {this.props.name}</p>
-                <Age age={19} />  
+                { this.props.name === "John" && <Age age={24} /> }
             </div>
         )
     }
