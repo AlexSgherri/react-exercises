@@ -1,13 +1,15 @@
 import React from "react";
-import {Hello} from "./Hello";
-import {Welcome} from "./Welcome";
+import { Counter } from "./Counter";
+import { Hello } from "./Hello";
+import { Welcome } from "./Welcome";
 
 export class App extends React.Component{
     render(){
         return (
         <div>
             <Hello /> 
-            <Welcome name="Vittorio" />
+            <Welcome name="John" />
+            <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
         </div>
         )
     }
