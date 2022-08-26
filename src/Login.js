@@ -29,8 +29,17 @@ export class Login extends React.Component {
   };
 
   callingOnLogin = () => {
-    this.props.passingFunction(this.state)
-  }
+    this.props.passingFunction(this.state);
+  };
+
+  resetStateHandler = () => {
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+      disable: true,
+    });
+  };
 
   render() {
     return (
@@ -56,8 +65,15 @@ export class Login extends React.Component {
           type="checkbox"
         />
         <br></br>
-        <button onClick={this.callingOnLogin} name="button" disabled={this.state.disable}>
+        <button
+          onClick={this.callingOnLogin}
+          name="button"
+          disabled={this.state.disable}
+        >
           Login
+        </button>
+        <button onClick={this.resetStateHandler} name="reset">
+          Reset
         </button>
       </div>
     );
