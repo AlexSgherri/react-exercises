@@ -21,15 +21,27 @@ export class TodoList extends React.Component {
     this.setState({ nextItem: newItem });
   };
 
-  clearStateItems = () =>{
-    this.setState({items:[], nextItem: ""})
-  }
+  clearStateItems = () => {
+    this.setState({ items: [], nextItem: "" });
+  };
+
+  removeItemFromState = (event) => {
+    const newState = this.state.items.filter(
+      (element, index) => index != event.target.value
+    );
+    this.setState({ items: newState });
+  };
 
   render() {
     return (
       <ul>
         {this.state.items.map((element, index) => (
-          <li key={index}>{element}</li>
+          <li key={index}>
+            {element}
+            <button onClick={this.removeItemFromState} value={index}>
+              Remove
+            </button>
+          </li>
         ))}
         <input
           onChange={this.inputEventHandlers}
