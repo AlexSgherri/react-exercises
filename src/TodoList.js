@@ -21,6 +21,10 @@ export class TodoList extends React.Component {
     this.setState({ nextItem: newItem });
   };
 
+  clearStateItems = () =>{
+    this.setState({items:[], nextItem: ""})
+  }
+
   render() {
     return (
       <ul>
@@ -34,6 +38,7 @@ export class TodoList extends React.Component {
           id="insertToDo"
         />
         <button onClick={this.insertNewLiItem}>Insert</button>
+        <button onClick={this.clearStateItems}>Reset List</button>
       </ul>
     );
   }
