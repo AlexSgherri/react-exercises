@@ -3,14 +3,15 @@ import React from "react";
 export class TodoList extends React.Component {
   state = {
     items: ["bag", "table", "bottle", "console"],
+    nextItem: "",
   };
 
   insertNewLiItem = (event) => {
     event.preventDefault();
-    
-    if (this.state.nextItem && this.state.nextItem !== "")
+
+    if (this.state.nextItem !== "")
       this.setState((prev) => {
-        return { items: [...prev.items, prev.nextItem] };
+        return { items: [...prev.items, prev.nextItem], nextItem: "" };
       });
   };
 
@@ -29,6 +30,7 @@ export class TodoList extends React.Component {
         <input
           onChange={this.inputEventHandlers}
           name="insert"
+          value={this.state.nextItem}
           id="insertToDo"
         />
         <button onClick={this.insertNewLiItem}>Insert</button>
