@@ -2,9 +2,12 @@ import React from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 export class Counter extends React.Component {
-  state = {
+  constructor(props){
+    super(props)
+
+    this.state = {
     count: this.props.initialValue,
-  }
+  }}
 
   componentDidMount(){
 
@@ -27,3 +30,5 @@ Counter.defaultProps = {
     incrementInterval : 1000,
     incrementAmount : 1
 }
+
+// Il contructor rimane comunque utile per inizializzare lo state ma non ai fini dell'esercizio
