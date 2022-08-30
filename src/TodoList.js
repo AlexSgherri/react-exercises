@@ -1,10 +1,14 @@
 import React from "react";
 
 export class TodoList extends React.Component {
-  state = {
-    items: ["bag", "table", "bottle", "console"],
-    nextItem: "",
-  };
+  constructor(props){
+    super(props)
+
+    this.state = {
+      items: ["bag", "table", "bottle", "console"],
+      nextItem: "",
+    }
+  }
 
   insertNewLiItem = (event) => {
     event.preventDefault();
@@ -38,3 +42,6 @@ export class TodoList extends React.Component {
     );
   }
 }
+
+//per il clear dell'input ho utilizzato il nextItem all'interno dello state, esso è il responsabile di tracciare sia cosa andrà ad essere aggiunto alla lista
+//sia successivamente al reset dell'input con una semplice assegnazione di nextItem: "", esso quindi rappresenta il contenuto dell'input
