@@ -18,7 +18,7 @@ export class App extends React.Component{
 
     render(){
         return (
-        <Container>
+        <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
             <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
