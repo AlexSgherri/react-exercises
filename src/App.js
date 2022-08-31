@@ -8,6 +8,7 @@ import { Login } from "./Login";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
+import { Container } from "./Container";
 
 export class App extends React.Component{
 
@@ -17,7 +18,7 @@ export class App extends React.Component{
 
     render(){
         return (
-        <div>
+        <Container>
             <Hello /> 
             <Welcome name="John" />
             <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
@@ -27,7 +28,7 @@ export class App extends React.Component{
             <Login passingFunction={this.onLogin} />
             <UncontrolledLogin passingFunction={this.onLogin} />
             <TodoList />
-        </div>
+        </Container>
         )
     }
 }
