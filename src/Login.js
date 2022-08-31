@@ -42,6 +42,11 @@ export class Login extends React.Component {
   };
 
   render() {
+    const buttonBackground = {
+      backgroundColor: this.state.password.length <8 ? "red" : "green",
+      color: "white"
+    }
+
     return (
       <div>
         <input
@@ -68,7 +73,8 @@ export class Login extends React.Component {
         <button
           onClick={this.callingOnLogin}
           name="button"
-          disabled={this.state.disable}
+          disabled={this.state.disable} 
+          style={buttonBackground}
         >
           Login
         </button>
