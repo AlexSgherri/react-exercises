@@ -20,7 +20,7 @@ export class DisplayLanguage extends React.Component{
             <>
                 <LanguageContext.Consumer>
                     {(language) => {
-                        return <div>{lang[language].CURRENT_LANG}</div>
+                        return <h1>{lang[language].CURRENT_LANG} ( key: {language } )</h1>
                     }}
                 </LanguageContext.Consumer>
             </>
