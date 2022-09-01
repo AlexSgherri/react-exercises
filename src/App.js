@@ -9,8 +9,23 @@ import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
+import { LanguageContext } from "./LanguageContext";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 export class App extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            language: 'en'
+        }
+    }
+
+    languageChangeHandler = (event) =>{
+        this.setState({
+            language: event.target.value
+        })
+    }
 
     onLogin(state){
         console.log(state)
@@ -42,6 +57,14 @@ export class App extends React.Component{
                 )
             }} >
             </TodoList >
+            <br></br>
+            <select value={this.state.language} onChange={this.languageChangeHandler}>
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+            </select>
+            <LanguageContext.Provider value={this.state.language}>
+                <DisplayLanguage />
+            </LanguageContext.Provider>
         </Container>
         )
     }
