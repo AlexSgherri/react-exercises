@@ -1,10 +1,14 @@
 import React from "react";
 
 export class ClickTracker extends React.Component {
-    state = {
+  constructor(props){
+    super(props);
+    
+    this.state = {
         lastClicked : ""
     }
-
+  }
+  
   clickTrackerHandler = (event) => {
     console.log(event)
     this.setState(() => {

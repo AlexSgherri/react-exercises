@@ -1,12 +1,16 @@
 import React from "react";
 
 export class Login extends React.Component {
-  state = {
-    username: "",
-    password: "",
-    remember: false,
-    disable: true,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: "",
+      password: "",
+      remember: false,
+      disable: true,
+    };
+  }
 
   inputEventHandlers = (event) => {
     const name = event.target.name;
@@ -43,9 +47,9 @@ export class Login extends React.Component {
 
   render() {
     const buttonBackground = {
-      backgroundColor: this.state.password.length <8 ? "red" : "green",
-      color: "white"
-    }
+      backgroundColor: this.state.password.length < 8 ? "red" : "green",
+      color: "white",
+    };
 
     return (
       <div>
@@ -73,7 +77,7 @@ export class Login extends React.Component {
         <button
           onClick={this.callingOnLogin}
           name="button"
-          disabled={this.state.disable} 
+          disabled={this.state.disable}
           style={buttonBackground}
         >
           Login

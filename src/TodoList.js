@@ -1,10 +1,14 @@
 import React from "react";
 
 export class TodoList extends React.Component {
-  state = {
-    items: ["bag", "table", "bottle", "console"],
-    nextItem: "",
-  };
+  constructor(props){
+    super(props);
+
+    this.state = {
+      items: ["bag", "table", "bottle", "console"],
+      nextItem: "",
+    };
+  }
 
   insertNewLiItem = (event) => {
     event.preventDefault();
@@ -34,15 +38,8 @@ export class TodoList extends React.Component {
 
   render() {
     return (
-      <ul>
-        {this.state.items.map((element, index) => (
-          <li key={index}>
-            {element}
-            <button onClick={this.removeItemFromState} value={index}>
-              Remove
-            </button>
-          </li>
-        ))}
+      <>
+        {this.props.render(this.state.items, this.removeItemFromState)}
         <input
           onChange={this.inputEventHandlers}
           name="insert"
@@ -51,7 +48,7 @@ export class TodoList extends React.Component {
         />
         <button onClick={this.insertNewLiItem}>Insert</button>
         <button onClick={this.clearStateItems}>Reset List</button>
-      </ul>
+      </>
     );
   }
 }
