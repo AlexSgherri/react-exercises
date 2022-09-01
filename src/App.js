@@ -27,7 +27,21 @@ export class App extends React.Component{
             <InteractiveWelcome />
             <Login passingFunction={this.onLogin} />
             <UncontrolledLogin passingFunction={this.onLogin} />
-            <TodoList />
+            <TodoList render={(liElement, deleteFunction)=> {
+                return (
+                    <ul>
+                        {liElement.map((element, index) => (
+                            <li key={index}>
+                            {element}
+                            <button onClick={deleteFunction} value={index}>
+                                Remove
+                            </button>
+                            </li>
+                        ))}
+                    </ul>
+                )
+            }} >
+            </TodoList >
         </Container>
         )
     }
