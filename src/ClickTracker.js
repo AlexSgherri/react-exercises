@@ -8,6 +8,7 @@ export class ClickTracker extends React.Component {
         lastClicked : ""
     }
   }
+  
   clickTrackerHandler = (event) => {
     console.log(event)
     this.setState(() => {
