@@ -37,12 +37,12 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
-            <ClickCounter />
+            <Login passingFunction={this.onLogin} />
             {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
             <Sum numbers={ [5, 7, 9, 12] } />
+            <ClickCounter />
             <ClickTracker />
             <InteractiveWelcome />
-            <Login passingFunction={this.onLogin} />
             <UncontrolledLogin passingFunction={this.onLogin} />
             <TodoList render={(liElement, deleteFunction)=> {
                 return (
