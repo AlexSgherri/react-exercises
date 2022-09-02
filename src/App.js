@@ -18,7 +18,8 @@ export class App extends React.Component{
         super(props);
 
         this.state = {
-            language: 'en'
+            language: 'en',
+            counterVisible: true
         }
     }
 
@@ -36,13 +37,19 @@ export class App extends React.Component{
         console.log(state)
     }
 
+    toggleCounter = () => {
+        this.setState({counterVisible: !this.state.counterVisible})
+    }
+
     render(){
         return (
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
+            <button onClick={this.toggleCounter} >Toggle Counter</button>
+            {this.state.counterVisible && <Counter initialValue={2} incrementAmount={3} incrementInterval={500} />}
+            {/* 
             <ClickCounter onCounterChange={this.counterFunction}/>
-            {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
             <Login passingFunction={this.onLogin} />
             <Sum numbers={ [5, 7, 9, 12] } />
             <ClickTracker />
