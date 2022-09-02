@@ -37,9 +37,9 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
-            <Sum numbers={ [5, 7, 9, 12] } />
-            {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
             <ClickCounter />
+            {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
+            <Sum numbers={ [5, 7, 9, 12] } />
             <ClickTracker />
             <InteractiveWelcome />
             <Login passingFunction={this.onLogin} />
