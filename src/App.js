@@ -11,6 +11,7 @@ import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 export class App extends React.Component{
     constructor(props){
@@ -36,6 +37,7 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
+            <Sum numbers={ [5, 7, 9, 12] } />
             {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
             <ClickCounter />
             <ClickTracker />
