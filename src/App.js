@@ -28,6 +28,10 @@ export class App extends React.Component{
         })
     }
 
+    counterFunction = (number) => {
+        console.log(`The number is : ${number}`)
+    }
+
     onLogin(state){
         console.log(state)
     }
@@ -37,10 +41,10 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
-            <Login passingFunction={this.onLogin} />
+            <ClickCounter onCounterChange={this.counterFunction}/>
             {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
+            <Login passingFunction={this.onLogin} />
             <Sum numbers={ [5, 7, 9, 12] } />
-            <ClickCounter />
             <ClickTracker />
             <InteractiveWelcome />
             <UncontrolledLogin passingFunction={this.onLogin} />
