@@ -36,7 +36,7 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
-            <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
+            {/* <Counter initialValue={2} incrementAmount={3} incrementInterval={300} />
             <ClickCounter />
             <ClickTracker />
             <InteractiveWelcome />
@@ -64,7 +64,7 @@ export class App extends React.Component{
             </select>
             <LanguageContext.Provider value={this.state.language}>
                 <DisplayLanguage />
-            </LanguageContext.Provider>
+            </LanguageContext.Provider> */}
         </Container>
         )
     }
