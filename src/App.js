@@ -12,6 +12,7 @@ import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
+import { GithubUser } from "./GithubUser";
 
 export class App extends React.Component{
     constructor(props){
@@ -46,9 +47,10 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
+            <GithubUser username="AlexSgherri" />
+            {/* 
             <button onClick={this.toggleCounter} >Toggle Counter</button>
             {this.state.counterVisible && <Counter initialValue={2} incrementAmount={3} incrementInterval={500} />}
-            {/* 
             <ClickCounter onCounterChange={this.counterFunction}/>
             <Login passingFunction={this.onLogin} />
             <Sum numbers={ [5, 7, 9, 12] } />
