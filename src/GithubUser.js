@@ -14,7 +14,6 @@ export function GithubUser({ username }) {
       const json = await response.json();
 
       setData(json);
-      console.log(data);
     } catch (error) {
       setError(error);
       setData(null);
@@ -35,6 +34,7 @@ export function GithubUser({ username }) {
         <>
           <h1>{data.name}</h1>
           <ul>
+            <li>Login : {data.login}</li>
             <li>Bio : {data.bio}</li>
             <li>Repositories : {data.public_repos}</li>
             <li>Followers : {data.followers}</li>
