@@ -14,6 +14,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
+import { CarDetails } from "./CarDetails";
 
 export class App extends React.Component{
     constructor(props){
@@ -48,8 +49,9 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
-            <GithubUser username="AlexSgherri" />
+            <CarDetails initialData={{model : "Renault", year : 1998, color: "#000000"}}/>
             {/* 
+            <GithubUser username="AlexSgherri" />
             <Login passingFunction={this.onLogin} />
             <ClickCounter onCounterChange={this.counterFunction}/>
             <GithubUserList users={['IvanFras98', 'AlexSgherri']} />
