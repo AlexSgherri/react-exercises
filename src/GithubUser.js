@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
 
 export function GithubUser({ username }) {
-  const {data, error, loading} = useGithubUser(username)
+  const {data, error, loading, fetchGithubUser} = useGithubUser(username)
+  
+  useEffect(() => {
+    fetchGithubUser(username);
+  }, [username]);
+
 
   return (
     <div>
@@ -17,7 +23,7 @@ export function GithubUser({ username }) {
           </ul>
         </>
       )}
-      {error && <p>Failed to fetch</p>}
+      {error && <h1>Failed to fetch</h1>}
     </div>
   );
 }
