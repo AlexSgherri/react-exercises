@@ -1,39 +1,17 @@
-import { useState } from "react";
+import { useControlledFormInput } from "./useControlledFormInput"
 
 export function Login(props) {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-    remember: false,
-  });
+  const {formData, inputEventHandlers, resetStateHandler} = useControlledFormInput()
 
   const buttonBackground = {
     backgroundColor: formData.password.length < 8 ? "red" : "green",
     color: "white",
-  };
-
-  const inputEventHandlers = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    const type = event.target.type;
-    const checked = event.target.checked;
-
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value
-    });
+    borderRadius: "1rem",
+    cursor: "pointer"
   };
 
   const callingOnLogin = () => {
     props.passingFunction(formData);
-  };
-
-  const resetStateHandler = () => {
-    setFormData({
-      username: "",
-      password: "",
-      remember: false,
-    });
   };
 
   return (

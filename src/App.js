@@ -48,13 +48,13 @@ export class App extends React.Component{
         <Container title="React Exercises">
             <Hello /> 
             <Welcome name="John" />
-            <ClickCounter onCounterChange={this.counterFunction}/>
+            <Login passingFunction={this.onLogin} />
             {/* 
+            <ClickCounter onCounterChange={this.counterFunction}/>
             <GithubUserList users={['IvanFras98', 'AlexSgherri']} />
             <GithubUser username="AlexSgherri" />
             <button onClick={this.toggleCounter} >Toggle Counter</button>
             {this.state.counterVisible && <Counter initialValue={2} incrementAmount={3} incrementInterval={500} />}
-            <Login passingFunction={this.onLogin} />
             <Sum numbers={ [5, 7, 9, 12] } />
             <ClickTracker />
             <InteractiveWelcome />
