@@ -1,32 +1,7 @@
-import { useEffect, useState } from "react";
+import { useGithubUser } from "./useGithubUser";
 
 export function GithubUser({ username }) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  async function fetchGithubUser(user) {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch(`https://api.github.com/users/${user}`);
-      const json = await response.json();
-
-      setData(json);
-    } catch (err) {
-      setError(err);
-      setData(null);
-      
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    fetchGithubUser(username);
-  }, [username]);
+  const {data, error, loading} = useGithubUser(username)
 
   return (
     <div>
@@ -42,6 +17,7 @@ export function GithubUser({ username }) {
           </ul>
         </>
       )}
+      {error && <p>Failed to fetch</p>}
     </div>
   );
 }
