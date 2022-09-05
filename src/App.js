@@ -40,6 +40,8 @@ export function App (){
       <Container title="React Exercises">
         <Hello />
         <Welcome name="John" />
+        <ClickCounter onCounterChange={counterFunction}/>
+        {/* 
         <select
           value={language}
           onChange={languageChangeHandler}
@@ -50,11 +52,9 @@ export function App (){
         <LanguageContext.Provider value={language}>
           <DisplayLanguage />
         </LanguageContext.Provider>
-        {/* 
             <CarDetails initialData={{model : "Renault", year : 1998, color: "#000000"}}/>
             <GithubUser username="AlexSgherri" />
             <Login passingFunction={onLogin} />
-            <ClickCounter onCounterChange={counterFunction}/>
             <GithubUserList users={['IvanFras98', 'AlexSgherri']} />
             <button onClick={toggleCounter} >Toggle Counter</button>
             {state.counterVisible && <Counter initialValue={2} incrementAmount={3} incrementInterval={500} />}

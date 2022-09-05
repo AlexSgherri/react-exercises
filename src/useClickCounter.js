@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export function useClickCounter (initialValue = 0){
 
     const [count, setCount] = useState(initialValue);
     
-    function incrementCounterHandler() {
+    const incrementCounterHandler = useCallback(function incrementCounterHandler() {
         setCount((counter) => counter + 1);
-    }
+    }, [])
 
-    function decrementCounterHandler() {
+    const decrementCounterHandler = useCallback(function decrementCounterHandler() {
         setCount((counter) => counter -1);
-    }
+    }, [])
 
-    function resetCounterHandler(){
+    const resetCounterHandler = useCallback(function resetCounterHandler(){
         setCount(()=> initialValue)
-    }
+    }, [initialValue])
     
     return {
         count : count,
