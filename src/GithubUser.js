@@ -14,9 +14,10 @@ export function GithubUser({ username }) {
       const json = await response.json();
 
       setData(json);
-    } catch (error) {
-      setError(error);
+    } catch (err) {
+      setError(err);
       setData(null);
+      
       console.error(error);
     } finally {
       setLoading(false);
