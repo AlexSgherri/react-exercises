@@ -15,6 +15,7 @@ import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { CarDetails } from "./CarDetails";
+import { FilteredList } from "./FilteredList";
 
 export function App (){
     const [language, setLanguage] = useState("en");
@@ -35,13 +36,31 @@ export function App (){
 //     setState({ counterVisible: !state.counterVisible });
 //   };
 
+const peopleList = [
+  {
+    name: "Aldo",
+    id: 0,
+    age: 31,
+  },
+  {
+  name: "Giovanni",
+  id: 1,
+  age: 15,
+},
+{
+  name: "Giacomo",
+  id: 2,
+  age: 19,
+}
+]
  
     return (
       <Container title="React Exercises">
         <Hello />
         <Welcome name="John" />
-        <ClickCounter onCounterChange={counterFunction}/>
+        <FilteredList peopleList={peopleList} />
         {/* 
+        <ClickCounter onCounterChange={counterFunction}/>
         <select
           value={language}
           onChange={languageChangeHandler}
