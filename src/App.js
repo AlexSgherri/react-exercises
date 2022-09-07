@@ -16,7 +16,7 @@ import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { CarDetails } from "./CarDetails";
 import { FilteredList } from "./FilteredList";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 export function App() {
   const [language, setLanguage] = useState("en");
@@ -62,6 +62,7 @@ export function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/:username" element={<GithubUser />} />
       </Routes>
+      <Link to="/">Home</Link> | <Link to="/counter">Go to the Counter</Link> | <Link to="/:username" >Go to the Github User</Link>
 
       {/* 
         <Hello />
