@@ -15,3 +15,5 @@ store.subscribe(() => console.log(store.getState()))
 store.dispatch(incrementCounter(2))
 store.dispatch(resetCounter())
 store.dispatch(decrementCounter(-5))
+
+// dal console log si vede che è funzionante
