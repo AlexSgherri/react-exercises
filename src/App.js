@@ -59,6 +59,7 @@ export function App() {
     <Container title="React Exercises">
       <Routes>
         <Route path="/" element={<Welcome name="John" />} />
+        <Route path="/counter" element={<Counter />} />
       </Routes>
 
       {/* 
