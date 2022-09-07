@@ -32,7 +32,7 @@ export function GithubUserList({ users }) {
       <ul>
         {usersList.map((element, index) => (
           <li key={index}>
-            <Link to={"/users/" + element}>go to {element}</Link>
+            <Link to={`/users/${element}`}>go to {element}</Link>
           </li>
         ))}
       </ul>
