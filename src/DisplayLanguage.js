@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
+import React from "react";
 
 const lang = {
   en: {

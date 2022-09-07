@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GithubUser } from "./GithubUser";
+import React from "react";
 
 export function GithubUserList({ users }) {
   const [usersList, setUsers] = useState(users);

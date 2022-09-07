@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
+import React from "react";
 
 export function GithubUser({ username }) {
   const {data, error, loading, fetchGithubUser} = useGithubUser(username)

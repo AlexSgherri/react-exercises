@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
+import React from "react";
 
 export function Counter({
   initialValue = 0,

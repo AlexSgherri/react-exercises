@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import React from "react";
 
 function filterPeopleList(peopleList) {
   return peopleList.filter((element) => element.age > 18);
