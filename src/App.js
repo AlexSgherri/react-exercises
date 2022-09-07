@@ -16,50 +16,54 @@ import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { CarDetails } from "./CarDetails";
 import { FilteredList } from "./FilteredList";
+import { Route, Routes } from "react-router-dom";
 
-export function App (){
-    const [language, setLanguage] = useState("en");
+export function App() {
+  const [language, setLanguage] = useState("en");
 
   function languageChangeHandler(event) {
-   setLanguage(event.target.value);
-  };
+    setLanguage(event.target.value);
+  }
 
-  function counterFunction (number) {
+  function counterFunction(number) {
     console.log(`The number is : ${number}`);
-  };
+  }
 
- function onLogin(state) {
+  function onLogin(state) {
     console.log(state);
   }
 
-//   function toggleCounter (){
-//     setState({ counterVisible: !state.counterVisible });
-//   };
+  //   function toggleCounter (){
+  //     setState({ counterVisible: !state.counterVisible });
+  //   };
 
-const peopleList = [
-  {
-    name: "Aldo",
-    id: 0,
-    age: 31,
-  },
-  {
-  name: "Giovanni",
-  id: 1,
-  age: 15,
-},
-{
-  name: "Giacomo",
-  id: 2,
-  age: 19,
-}
-]
- 
-    return (
-      <Container title="React Exercises">
+  const peopleList = [
+    {
+      name: "Aldo",
+      id: 0,
+      age: 31,
+    },
+    {
+      name: "Giovanni",
+      id: 1,
+      age: 15,
+    },
+    {
+      name: "Giacomo",
+      id: 2,
+      age: 19,
+    },
+  ];
+
+  return (
+    <Container title="React Exercises">
+      <Routes>
+        <Route path="/" element={<Welcome name="John" />} />
+      </Routes>
+
+      {/* 
         <Hello />
-        <Welcome name="John" />
         <FilteredList peopleList={peopleList} />
-        {/* 
         <ClickCounter onCounterChange={counterFunction}/>
         <select
           value={language}
@@ -99,6 +103,6 @@ const peopleList = [
             <br></br>
 
             */}
-      </Container>
-    );
+    </Container>
+  );
 }

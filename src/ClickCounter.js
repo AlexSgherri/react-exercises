@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useClickCounter } from "./useClickCounter";
+import React from "react";
 
 export function ClickCounter(props) {
   const {count, incrementValue, decerementValue, reset } = useClickCounter(0)
