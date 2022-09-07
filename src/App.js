@@ -60,6 +60,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Welcome name="John" />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/:username" element={<GithubUser />} />
       </Routes>
 
       {/* 
