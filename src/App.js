@@ -1,65 +1,68 @@
 import React, { useState } from "react";
-import { ClickCounter } from "./ClickCounter";
-import { ClickTracker } from "./ClickTracker";
 import { Counter } from "./Counter";
-import { Hello } from "./Hello";
-import { InteractiveWelcome } from "./InteractiveWelcome";
-import { Login } from "./Login";
-import { TodoList } from "./TodoList";
-import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
-import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
-import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
-import { CarDetails } from "./CarDetails";
-import { FilteredList } from "./FilteredList";
+import { Link, Route, Routes } from "react-router-dom";
+import { NotFound } from "./NotFound";
+import { ShowGithubUser } from "./ShowGithubUser";
 
-export function App (){
-    const [language, setLanguage] = useState("en");
+export function App() {
+  const [language, setLanguage] = useState("en");
 
   function languageChangeHandler(event) {
-   setLanguage(event.target.value);
-  };
+    setLanguage(event.target.value);
+  }
 
-  function counterFunction (number) {
+  function counterFunction(number) {
     console.log(`The number is : ${number}`);
-  };
+  }
 
- function onLogin(state) {
+  function onLogin(state) {
     console.log(state);
   }
 
-//   function toggleCounter (){
-//     setState({ counterVisible: !state.counterVisible });
-//   };
+  //   function toggleCounter (){
+  //     setState({ counterVisible: !state.counterVisible });
+  //   };
 
-const peopleList = [
-  {
-    name: "Aldo",
-    id: 0,
-    age: 31,
-  },
-  {
-  name: "Giovanni",
-  id: 1,
-  age: 15,
-},
-{
-  name: "Giacomo",
-  id: 2,
-  age: 19,
-}
-]
- 
-    return (
-      <Container title="React Exercises">
+  const peopleList = [
+    {
+      name: "Aldo",
+      id: 0,
+      age: 31,
+    },
+    {
+      name: "Giovanni",
+      id: 1,
+      age: 15,
+    },
+    {
+      name: "Giacomo",
+      id: 2,
+      age: 19,
+    },
+  ];
+
+  return (
+    <Container title="React Exercises">
+      <Link to="/">Home</Link> | <Link to="/counter">Go to the Counter</Link> | <Link to="/users" >Github Users List</Link>
+      <br />
+      <Routes>
+        <Route path="/" element={<Welcome name="John" />} />
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/:username" element={<GithubUser />} />
+        <Route path="/users" element={<GithubUserList users={['IvanFras98', 'AlexSgherri']}/>} >
+          <Route index element={<h2>Add a user and select it</h2>} />
+          <Route path=":username"  element={<ShowGithubUser />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      {/* 
         <Hello />
-        <Welcome name="John" />
         <FilteredList peopleList={peopleList} />
-        {/* 
         <ClickCounter onCounterChange={counterFunction}/>
         <select
           value={language}
@@ -99,6 +102,6 @@ const peopleList = [
             <br></br>
 
             */}
-      </Container>
-    );
+    </Container>
+  );
 }
