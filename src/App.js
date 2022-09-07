@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import { ClickCounter } from "./ClickCounter";
-import { ClickTracker } from "./ClickTracker";
 import { Counter } from "./Counter";
-import { Hello } from "./Hello";
-import { InteractiveWelcome } from "./InteractiveWelcome";
-import { Login } from "./Login";
-import { TodoList } from "./TodoList";
-import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
-import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
-import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
-import { CarDetails } from "./CarDetails";
-import { FilteredList } from "./FilteredList";
 import { Link, Route, Routes } from "react-router-dom";
 import { NotFound } from "./NotFound";
 import { ShowGithubUser } from "./ShowGithubUser";
@@ -59,6 +47,8 @@ export function App() {
 
   return (
     <Container title="React Exercises">
+      <Link to="/">Home</Link> | <Link to="/counter">Go to the Counter</Link> | <Link to="/users" >Github Users List</Link>
+      <br />
       <Routes>
         <Route path="/" element={<Welcome name="John" />} />
         <Route path="/counter" element={<Counter />} />
@@ -69,8 +59,6 @@ export function App() {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <br />
-      <Link to="/">Home</Link> | <Link to="/counter">Go to the Counter</Link> | <Link to="/users" >Github Users List</Link>
 
       {/* 
         <Hello />

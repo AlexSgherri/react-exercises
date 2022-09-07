@@ -1,28 +1,22 @@
-import { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
 import React from "react";
 import { useParams } from "react-router-dom";
 
 export function GithubUser() {
   const { username } = useParams()
-  const {data, error, loading, fetchGithubUser} = useGithubUser(username)
+  const {user, error, loading} = useGithubUser(username)
   
-  useEffect(() => {
-    fetchGithubUser(username);
-  }, [username]);
-
-
   return (
     <div>
       {loading && <h1>Loading...</h1>}
-      {data && (
+      {user && (
         <>
-          <h1>{data.name}</h1>
+          <h1>{user.name}</h1>
           <ul>
-            <li>Login : {data.login}</li>
-            <li>Bio : {data.bio}</li>
-            <li>Repositories : {data.public_repos}</li>
-            <li>Followers : {data.followers}</li>
+            <li>Login : {user.login}</li>
+            <li>Bio : {user.bio}</li>
+            <li>Repositories : {user.public_repos}</li>
+            <li>Followers : {user.followers}</li>
           </ul>
         </>
       )}
