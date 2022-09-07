@@ -18,6 +18,7 @@ import { CarDetails } from "./CarDetails";
 import { FilteredList } from "./FilteredList";
 import { Link, Route, Routes } from "react-router-dom";
 import { NotFound } from "./NotFound";
+import { ShowGithubUser } from "./ShowGithubUser";
 
 export function App() {
   const [language, setLanguage] = useState("en");
@@ -62,10 +63,13 @@ export function App() {
         <Route path="/" element={<Welcome name="John" />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/:username" element={<GithubUser />} />
+        <Route path="/users" element={<GithubUserList users={['IvanFras98', 'AlexSgherri']}/>} >
+          <Route path=":username"  element={<ShowGithubUser />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <br />
-      <Link to="/">Home</Link> | <Link to="/counter">Go to the Counter</Link> | <Link to="/:username" >Go to the Github User</Link>
+      <Link to="/">Home</Link> | <Link to="/counter">Go to the Counter</Link> | <Link to="/users" >Github Users List</Link>
 
       {/* 
         <Hello />
