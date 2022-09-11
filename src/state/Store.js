@@ -1,4 +1,10 @@
 import { counterReducer } from "./CounterState";
-import { configureStore } from "@reduxjs/toolkit"
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { todosReducer } from "./TodosReducer";
 
-export const store = configureStore({ reducer : counterReducer})
+const rootReducer = combineReducers({
+    counter: counterReducer,
+    todos: todosReducer
+})
+
+export const store = configureStore({ reducer : rootReducer})
