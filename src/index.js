@@ -22,3 +22,5 @@ store.dispatch(editTodos(0, {title: "practice React", completed: false}))
 store.dispatch(removeTodos(1))
 
 // dal console log si vede che è funzionante
+
+// lo store era già in subscribe
